@@ -1,10 +1,10 @@
-# JellyFish
+ï»¿# JellyFish
 
-Ë®Ä¸
+æ°´æ¯
 
 [English](./README.md)
 
-Ö§³Ö¹¦ÄÜ:  
+æ”¯æŒåŠŸèƒ½:  
 - [x] ConcurrencyMap
 - [x] ConcurrencyUnorderedMap
 - [x] ConcurrencyVector
@@ -15,28 +15,28 @@
 - [x] ThreadScheduledOne
 
 # ConcurrencyMap:  
-Ö§³Ö¶àÏß³Ì¶ÁĞ´  
+æ”¯æŒå¤šçº¿ç¨‹è¯»å†™  
 
 # ConcurrencyUnorderedMap:  
-Ö§³Ö¶àÏß³Ì¶ÁĞ´  
+æ”¯æŒå¤šçº¿ç¨‹è¯»å†™  
 
 # ConcurrencyVector:  
-Ö§³Ö¶àÏß³Ì¶ÁĞ´  
+æ”¯æŒå¤šçº¿ç¨‹è¯»å†™  
 
 # ConcurrencyDeque:  
-Ö§³Ö¶àÏß³Ì¶ÁĞ´  
+æ”¯æŒå¤šçº¿ç¨‹è¯»å†™  
 
 # ThreadLocalMap:  
-Ö§³ÖÔÚÏß³Ì³ØÖĞ¶ÁĞ´µ±Ç°Ïß³ÌµÄ±¾µØÊı¾İ  
+æ”¯æŒåœ¨çº¿ç¨‹æ± ä¸­è¯»å†™å½“å‰çº¿ç¨‹çš„æœ¬åœ°æ•°æ®  
 
 # CompletableFuture:  
-Ö§³ÖÒì²½ÈÎÎñ´¦Àí.µ±Ç°ËùĞèµÄ·µ»ØÖµ¿ÉÒÔÔÚ½«À´Íê³É  
+æ”¯æŒå¼‚æ­¥ä»»åŠ¡å¤„ç†.å½“å‰æ‰€éœ€çš„è¿”å›å€¼å¯ä»¥åœ¨å°†æ¥å®Œæˆ  
 
 # ThreadPool:  
-Ïß³Ì³Ø  
+çº¿ç¨‹æ±   
 
 # ThreadScheduledOne:  
-°´¼Æ»®Ö´ĞĞµÄÈÎÎñ.Ïß³ÌÊÇÎ¨Ò»µÄ   
+æŒ‰è®¡åˆ’æ‰§è¡Œçš„ä»»åŠ¡.çº¿ç¨‹æ˜¯å”¯ä¸€çš„   
  
 ## Quick Start
 
