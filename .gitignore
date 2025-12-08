@@ -30,3 +30,6 @@ bin/
 obj/
 x64/
 x86/
+
+# nuget
+*.nupkg
