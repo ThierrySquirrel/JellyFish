@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
 
 	<metadata>
-		<id>JellyFish</id>
-		<version>1.0.0</version>
+		<id>ThrerrySquirrel.JellyFish</id>
+		<version>1.0.1</version>
 		
 		<authors>ThrerrySquirrel</authors>
 		<owners>ThrerrySquirrel</owners>
@@ -20,7 +20,7 @@
 	</metadata>
 
 	<files>
-		<file src="JellyFish.targets" target="build\native" />
+		<file src="ThrerrySquirrel.JellyFish.targets" target="build\native" />
 
 		<file src="*.h" target="build\native\include\JellyFish" />
 		<file src="JellyFish.dll" target="build\native\bin\x64"/>

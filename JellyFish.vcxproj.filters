@@ -311,7 +311,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="JellyFish.nuspec" />
-    <None Include="JellyFish.targets" />
+    <None Include="ThrerrySquirrel.JellyFish.targets" />
     <None Include=".gitignore" />
     <None Include="README.md" />
     <None Include="README_zh_CN.md" />
