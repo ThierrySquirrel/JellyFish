@@ -3,17 +3,17 @@
 
 	<metadata>
 		<id>ThrerrySquirrel.JellyFish</id>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 		
 		<authors>ThrerrySquirrel</authors>
 		<owners>ThrerrySquirrel</owners>
 		
 		<projectUrl>https://github.com/ThierrySquirrel/JellyFish</projectUrl>
 		<license type="expression">Apache-2.0</license>
-		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
 		
-		<releaseNotes>JellyFish::1.0.0</releaseNotes>
-		<description>JellyFish::V1.0.0</description>
+		<releaseNotes>JellyFish::1.0.2</releaseNotes>
+		<description>JellyFish::V1.0.2</description>
 		
 		<tags>JellyFish</tags>
 
