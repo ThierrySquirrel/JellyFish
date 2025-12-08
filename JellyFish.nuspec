@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+
+	<metadata>
+		<id>JellyFish</id>
+		<version>1.0.0</version>
+		
+		<authors>ThrerrySquirrel</authors>
+		<owners>ThrerrySquirrel</owners>
+		
+		<projectUrl>https://github.com/ThierrySquirrel/JellyFish</projectUrl>-->
+		<license type="expression">Apache-2.0</license>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		
+		<releaseNotes>JellyFish::1.0.0</releaseNotes>
+		<description>JellyFish::V1.0.0</description>
+		
+		<copyright>https://thierrysquirrel.github.io/</copyright>
+		<tags>JellyFish</tags>
+
+	</metadata>
+
+	<files>
+		<file src="JellyFish.targets" target="build\native" />
+
+		<file src="*.h" target="build\native\include\JellyFish" />
+		<file src="JellyFish.dll" target="build\native\bin\x64"/>
+		<file src="JellyFish.lib" target="build\native\bin\x64"/>
+	</files>
+</package>

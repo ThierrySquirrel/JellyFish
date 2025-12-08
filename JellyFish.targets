@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)..\..\build\native\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+	<Link>
+      <AdditionalDependencies>JellyFish.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(MSBuildThisFileDirectory)..\..\build\native\bin\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  
+  <Target Name="CopyNativeDlls" AfterTargets="Build">
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)..\..\build\native\bin\x64\JellyFish.dll" 
+          DestinationFiles="JellyFish.dll" />
+  </Target>
+  
+  <Target Name="CleanNativeDlls" BeforeTargets="Clean">
+      <Delete Files="JellyFish.dll" />
+    </Target>
+</Project>

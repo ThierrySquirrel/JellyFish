@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\src">
+      <UniqueIdentifier>{3bd1a92e-d7e7-4663-bc4e-6d4d6779885e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src">
+      <UniqueIdentifier>{1b15deca-e4ac-49db-9b16-3000075480e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\concurrency">
+      <UniqueIdentifier>{08c41d5c-bfeb-4725-a09b-07d021d89407}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\concurrency">
+      <UniqueIdentifier>{63fe6dfd-d377-4de5-8db0-68a19d99ceab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\concurrency\constant">
+      <UniqueIdentifier>{b0e344ea-cd6c-4923-99b1-d5115e4285b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\concurrency\map">
+      <UniqueIdentifier>{365ce27a-3a4a-46b4-bd59-7281637cef37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\concurrency\constant">
+      <UniqueIdentifier>{e4bb2440-faef-47f3-9675-00a7244a3370}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\concurrency\map">
+      <UniqueIdentifier>{2b59d167-b4c4-40cc-a70b-19a804d74b66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\shared">
+      <UniqueIdentifier>{e1f1a4fa-7bbc-4651-acaa-69743fd754b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\shared\mutex">
+      <UniqueIdentifier>{df78cad3-5e57-4d08-b81c-3911404ead40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\shared\mutex\agent">
+      <UniqueIdentifier>{a320c5ad-c30c-4b33-8865-3affbaf838e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\concurrency\unordered">
+      <UniqueIdentifier>{1ebc48fe-5ddb-4462-965a-d0fe50fab926}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\concurrency\unordered\map">
+      <UniqueIdentifier>{998524c1-bc57-4bca-af60-40b23e5a06ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\concurrency\unordered">
+      <UniqueIdentifier>{258ac168-11dd-4681-91b6-cb87b0b86890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\concurrency\unordered\map">
+      <UniqueIdentifier>{89aa69e0-5d63-4048-9a61-dcb108305990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\base">
+      <UniqueIdentifier>{6135aa04-dcb2-4ed9-8ccb-f49b11a80aa7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\base">
+      <UniqueIdentifier>{34828029-dc1b-47db-9d12-6c2379be147c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\base\container">
+      <UniqueIdentifier>{da3b3cb7-0981-4ce1-b5ac-dfe640a0103b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\base\container">
+      <UniqueIdentifier>{dbdf05ba-2f47-47cc-a23e-bb6bbd2a0948}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\base\container\build">
+      <UniqueIdentifier>{b3512ee9-f70c-4cfb-b5cb-43c26b27e641}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\base\container\build">
+      <UniqueIdentifier>{f75634c8-8260-429c-8766-66fdd1b7c7f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\concurrency\vector">
+      <UniqueIdentifier>{87202812-7d55-470a-afe6-3e3d98734952}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\concurrency\vector">
+      <UniqueIdentifier>{0ad2cb97-0a54-46e4-b540-a8fcdd83ac8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\shared">
+      <UniqueIdentifier>{b153ccd2-9439-4700-91b4-70d5cdc38692}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\shared\mutex">
+      <UniqueIdentifier>{c54b7df0-eeaa-42e8-a238-e1a554ac3c0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\shared\mutex\agent">
+      <UniqueIdentifier>{648d20fc-581f-4da4-b69c-8f5e5a7eed37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\concurrency\deque">
+      <UniqueIdentifier>{8309ee4f-9968-42b9-a56b-97bd5af58290}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\concurrency\deque">
+      <UniqueIdentifier>{aa051aa1-4c84-46fe-a4b5-06f0a75a49b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread">
+      <UniqueIdentifier>{ea0229a6-d408-4509-b780-1e41c3378f62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread">
+      <UniqueIdentifier>{dbd91fa5-ef64-4791-8d35-22985c60d7c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\local">
+      <UniqueIdentifier>{8d41c666-0454-4e80-8e64-3809caa767aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\local">
+      <UniqueIdentifier>{7cfdd87a-2144-4f11-963f-c14579f02f08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\local\map">
+      <UniqueIdentifier>{40336a3f-d036-4764-a335-93256e3b6d94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\local\map">
+      <UniqueIdentifier>{318b204f-7d19-4e3d-8fcd-0dd2863673f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\local\map\constant">
+      <UniqueIdentifier>{8db24319-0539-484d-bcb8-cea1457a8f3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\local\map\constant">
+      <UniqueIdentifier>{37a7d42a-c7f5-4eb0-8592-ee773a52993e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\completable">
+      <UniqueIdentifier>{86fde677-987c-4179-945b-50c7aa6d5f9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\completable">
+      <UniqueIdentifier>{011e7617-7d5b-4628-93b3-98507f39d248}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\completable\future">
+      <UniqueIdentifier>{075af848-f420-4298-9d04-355d0e011bde}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\completable\future">
+      <UniqueIdentifier>{20d02252-6abc-44ba-af15-a357ededb5d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\run">
+      <UniqueIdentifier>{6c28c489-a384-4751-8b89-e49cd82f90d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\run\virtual">
+      <UniqueIdentifier>{8fc80ede-15f2-40e9-8cf0-157287a13d65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\run">
+      <UniqueIdentifier>{838a16b8-787b-46d8-a650-a0188cdc46fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\run\virtual">
+      <UniqueIdentifier>{f2b4fb34-2a07-451a-a612-8f8e9ab15ef4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\pool">
+      <UniqueIdentifier>{3ea837c1-e154-4c55-8ba9-c32826c12a76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\pool">
+      <UniqueIdentifier>{156c833a-3e2f-47c0-8a7c-cb2cdc0ab73b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\pool\constant">
+      <UniqueIdentifier>{0f0808ea-b184-4d8f-a09b-0b59b11a8ef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\pool\constant">
+      <UniqueIdentifier>{45ea4bcb-92e0-4166-a507-b5fd48fd7273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\run\agent">
+      <UniqueIdentifier>{66d76c40-3f0e-4fb4-8075-9addf9624284}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\run\agent">
+      <UniqueIdentifier>{c91d14ad-9a55-4e7e-8bac-4c05a676dffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\scheduled">
+      <UniqueIdentifier>{345d8be7-7386-473f-8dca-cf4bba87077c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\scheduled\one">
+      <UniqueIdentifier>{05a201fa-1f64-465e-ab72-550d1062474e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\scheduled">
+      <UniqueIdentifier>{c725a399-fd42-4292-bbb6-24141f6dedff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\scheduled\one">
+      <UniqueIdentifier>{5efca064-6d76-45cc-873e-83bae6b2cb07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\run\scheduled">
+      <UniqueIdentifier>{6d311dc7-2009-4a34-9876-b89fac6d40dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\run\scheduled">
+      <UniqueIdentifier>{2dcee0b0-75bf-4840-9236-fd2b8a55be28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\src\thread\run\scheduled\agent">
+      <UniqueIdentifier>{2680e219-bbdf-49a1-b979-54020153cdc4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\run\scheduled\agent">
+      <UniqueIdentifier>{2c4df327-67b0-4677-a6d4-75ac3caad5c2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcurrencyConstant.h">
+      <Filter>头文件\src\concurrency\constant</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcurrencyMap.h">
+      <Filter>头文件\src\concurrency\map</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcurrencyUnorderedMap.h">
+      <Filter>头文件\src\concurrency\unordered\map</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseContainer.h">
+      <Filter>头文件\src\base\container</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseContainerBuild.h">
+      <Filter>头文件\src\base\container\build</Filter>
+    </ClInclude>
+    <ClInclude Include="SharedMutexAgent.h">
+      <Filter>头文件\src\shared\mutex\agent</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcurrencyVector.h">
+      <Filter>头文件\src\concurrency\vector</Filter>
+    </ClInclude>
+    <ClInclude Include="ConcurrencyDeque.h">
+      <Filter>头文件\src\concurrency\deque</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadLocalMap.h">
+      <Filter>头文件\src\thread\local\map</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadLocalMapConstant.h">
+      <Filter>头文件\src\thread\local\map\constant</Filter>
+    </ClInclude>
+    <ClInclude Include="CompletableFuture.h">
+      <Filter>头文件\src\completable\future</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualThreadRun.h">
+      <Filter>头文件\src\thread\run\virtual</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadPool.h">
+      <Filter>头文件\src\thread\pool</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadPoolConstant.h">
+      <Filter>头文件\src\thread\pool\constant</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadRunAgent.h">
+      <Filter>头文件\src\thread\run\agent</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadScheduledOne.h">
+      <Filter>头文件\src\thread\scheduled\one</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadRunScheduledAgent.h">
+      <Filter>头文件\src\thread\run\scheduled\agent</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcurrencyConstant.cpp">
+      <Filter>源文件\src\concurrency\constant</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcurrencyMap.cpp">
+      <Filter>源文件\src\concurrency\map</Filter>
+    </ClCompile>
+    <ClCompile Include="SharedMutexAgent.cpp">
+      <Filter>源文件\src\shared\mutex\agent</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcurrencyUnorderedMap.cpp">
+      <Filter>源文件\src\concurrency\unordered\map</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseContainer.cpp">
+      <Filter>源文件\src\base\container</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseContainerBuild.cpp">
+      <Filter>源文件\src\base\container\build</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcurrencyVector.cpp">
+      <Filter>源文件\src\concurrency\vector</Filter>
+    </ClCompile>
+    <ClCompile Include="ConcurrencyDeque.cpp">
+      <Filter>源文件\src\concurrency\deque</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadLocalMap.cpp">
+      <Filter>源文件\src\thread\local\map</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadLocalMapConstant.cpp">
+      <Filter>源文件\src\thread\local\map\constant</Filter>
+    </ClCompile>
+    <ClCompile Include="CompletableFuture.cpp">
+      <Filter>源文件\src\completable\future</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualThreadRun.cpp">
+      <Filter>源文件\src\thread\run\virtual</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadPool.cpp">
+      <Filter>源文件\src\thread\pool</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadPoolConstant.cpp">
+      <Filter>源文件\src\thread\pool\constant</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadRunAgent.cpp">
+      <Filter>源文件\src\thread\run\agent</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadScheduledOne.cpp">
+      <Filter>源文件\src\thread\scheduled\one</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadRunScheduledAgent.cpp">
+      <Filter>源文件\src\thread\run\scheduled\agent</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="JellyFish.nuspec" />
+    <None Include="JellyFish.targets" />
+    <None Include=".gitignore" />
+    <None Include="README.md" />
+    <None Include="README_zh_CN.md" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,32 @@
+# dll
+*.exe
+*.dll
+*.obj
+*.lib
+*.pdb
+*.exp
+
+#Visual Studio
+*.user
+*.aps
+*.suo
+*.sdf
+*.cachefile
+*.ncb
+*.opendb
+*.opensdf
+*.suo
+*.log
+ipch/
+*.vc.db
+Debug/
+Release/
+.vs/
+
+# build
+build/
+out/
+bin/
+obj/
+x64/
+x86/
