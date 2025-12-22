@@ -36,8 +36,17 @@ namespace JellyFish {
 	template <typename V>
 	class DllExport ConcurrencyDeque {
 	private:std::deque<std::deque<V>> containerAll;
+	private:std::atomic<int> containerOffset;
 	private:int locksOffset;
 	private:std::deque<SharedMutexAgent> locksContainer;
+
+	public:ConcurrencyDeque<V>& operator=(const ConcurrencyDeque<V>& value) {
+		containerAll = value.containerAll;
+		containerOffset.store(value.containerOffset.load());
+		locksOffset = value.locksOffset;
+		locksContainer = value.locksContainer;
+		return *this;
+	}
 
 	public:ConcurrencyDeque<V>() {
 		int locksOffset = JellyFish::ConcurrencyConstant::DEFAULT_LOCKS_OFFSET;
@@ -56,19 +65,25 @@ namespace JellyFish {
 	}
 
 	public:JellyFish::BaseContainer<V> tryPopBack() {
+		int thisContainerOffset = this->getContainerOffset();
+
 		int size = this->locksOffset;
 		for (int i = 0; i < size; i++) {
-
-			locksContainer[i].lock();
-			bool isEmpty = containerAll[i].empty();
+			locksContainer[thisContainerOffset].lock();
+			bool isEmpty = containerAll[thisContainerOffset].empty();
 			if (!isEmpty) {
-				V value = containerAll[i].back();
-				containerAll[i].pop_back();
-				locksContainer[i].unlock();
+				V value = containerAll[thisContainerOffset].back();
+				containerAll[thisContainerOffset].pop_back();
+				locksContainer[thisContainerOffset].unlock();
 
 				return JellyFish::BaseContainerBuild<V>::buildSuccess(value);
 			}
-			locksContainer[i].unlock();
+			locksContainer[thisContainerOffset].unlock();
+
+			thisContainerOffset++;
+			if (thisContainerOffset == size) {
+				thisContainerOffset = 0;
+			}
 		}
 		return JellyFish::BaseContainerBuild<V>::buildFail();
 
@@ -109,7 +124,20 @@ namespace JellyFish {
 		return thisLocksOffset;
 	}
 
+	private:int getContainerOffset() {
+		int offset = this->containerOffset.load();
+
+		int thisLocksOffset = this->locksOffset;
+		if (offset >= thisLocksOffset) {
+			this->containerOffset.store(0);
+			offset = 0;
+		}
+		this->containerOffset.fetch_add(1);
+		return offset;
+	}
+
 	private:void init(int& locksOffset) {
+		this->containerOffset.store(0);
 		this->locksOffset = locksOffset;
 		for (int i = 0; i < locksOffset; i++) {
 			SharedMutexAgent thisMutex;

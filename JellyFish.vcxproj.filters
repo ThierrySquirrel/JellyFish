@@ -187,6 +187,9 @@
     <Filter Include="头文件\src\thread\run\scheduled\agent">
       <UniqueIdentifier>{2c4df327-67b0-4677-a6d4-75ac3caad5c2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\test">
+      <UniqueIdentifier>{ede28d7b-f49a-4652-a5db-972e52739ef2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
