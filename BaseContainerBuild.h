@@ -33,14 +33,14 @@ namespace JellyFish {
 	class DllExport BaseContainerBuild {
 	public:static BaseContainer<V> buildSuccess(V& value) {
 		bool isEmpty = false;
-		JellyFish::BaseContainer entity(isEmpty, value);
+		JellyFish::BaseContainer<V> entity(isEmpty, value);
 		return entity;
 	}
 
 	public:static BaseContainer<V> buildFail() {
 		bool isEmpty = true;
 		V failValue;
-		JellyFish::BaseContainer entity(isEmpty, failValue);
+		JellyFish::BaseContainer<V> entity(isEmpty, failValue);
 		return entity;
 	}
 	};
