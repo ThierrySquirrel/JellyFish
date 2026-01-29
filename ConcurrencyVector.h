@@ -125,15 +125,9 @@ namespace JellyFish {
 	}
 
 	private:int getContainerOffset() {
-		int offset = this->containerOffset.load();
-
+		int fetchAdd = this->containerOffset.fetch_add(1);
 		int thisLocksOffset = this->locksOffset;
-		if (offset >= thisLocksOffset) {
-			this->containerOffset.store(0);
-			offset = 0;
-		}
-		this->containerOffset.fetch_add(1);
-		return offset;
+		return ((fetchAdd % thisLocksOffset) + thisLocksOffset) % thisLocksOffset;
 	}
 
 	private:void init(int& locksOffset) {
