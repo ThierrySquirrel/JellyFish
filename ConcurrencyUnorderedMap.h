@@ -66,6 +66,29 @@ namespace JellyFish {
 		return value;
 	}
 
+	public: V getIfAbsent(K& key, V& newValue) {
+		typename std::unordered_map<K, V>::const_iterator mapFind;
+		typename std::unordered_map<K, V>::const_iterator mapEnd;
+
+		V value = newValue;
+
+		int mutexOffset = getMutexOffset(key);
+
+		locksContainer[mutexOffset].lockShared();
+		mapFind = containerAll[mutexOffset].find(key);
+		mapEnd = containerAll[mutexOffset].end();
+
+		if (mapFind == mapEnd) {
+			containerAll[mutexOffset][key] = newValue;
+		}
+		else {
+			value = containerAll[mutexOffset][key];
+		}
+		locksContainer[mutexOffset].unlockShared();
+
+		return value;
+	}
+
 	public:bool isFind(K& key) {
 
 		typename std::unordered_map<K, V>::const_iterator mapFind;
