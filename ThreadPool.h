@@ -1,5 +1,5 @@
 /**
- * Copyright 2025/12/8 ThierrySquirrel
+ * Copyright 2026/6/5 ThierrySquirrel
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@
   * @brief: C++20
   *
   * @authors ThierrySquirrel
-  * @date 2025/12/8
+  * @date 2026/6/5
   **/
 
 namespace JellyFish {
@@ -38,6 +38,10 @@ namespace JellyFish {
 	private:std::mutex containerMutex;
 	private:std::condition_variable containerCondition;
 	private:std::atomic<bool> isDeleteAll;
+
+	private:std::atomic<int> threadSleepSize;
+	private:JellyFish::CompletableFuture<bool> threadAllStart;
+	private:std::mutex threadAllStartMutex;
 
 	public:ThreadPool();
 	public:ThreadPool(int& maxThreadSize);

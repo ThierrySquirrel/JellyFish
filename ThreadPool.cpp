@@ -1,5 +1,5 @@
 /**
- * Copyright 2025/12/8 ThierrySquirrel
+ * Copyright 2026/6/5 ThierrySquirrel
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
   * @brief: C++20
   *
   * @authors ThierrySquirrel
-  * @date 2025/12/8
+  * @date 2026/6/5
   **/
 
 JellyFish::ThreadPool::ThreadPool() {
@@ -54,6 +54,9 @@ int JellyFish::ThreadPool::getMaxThreadSize() {
 void JellyFish::ThreadPool::init(int& maxThreadSize) {
 	JellyFish::ThreadPool::setMaxThreadSize(maxThreadSize);
 	isDeleteAll.store(false);
+	threadSleepSize.store(maxThreadSize);
+
+
 	JellyFish::ConcurrencyDeque<JellyFish::VirtualThreadRun*> thisDeque(maxThreadSize);
 	containerAll = thisDeque;
 
@@ -61,9 +64,16 @@ void JellyFish::ThreadPool::init(int& maxThreadSize) {
 		JellyFish::ThreadRunAgent runAgent(&containerAll,
 			&containerMutex,
 			&containerCondition,
-			&isDeleteAll);
+			&isDeleteAll,
+			&threadSleepSize,
+			&threadAllStart,
+			&threadAllStartMutex);
 		std::thread(std::bind(&JellyFish::ThreadRunAgent::agentRun, runAgent)).detach();
 	}
+
+	int milliseconds = JellyFish::ThreadPoolConstant::DEFAULT_MILLISECONDS;
+	int maxTryCount = JellyFish::ThreadPoolConstant::DEFAULT_MAX_TRY_COUNT;
+	threadAllStart.tryOneGet(milliseconds, maxTryCount);
 }
 
 void JellyFish::ThreadPool::deleteAll() {
