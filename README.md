@@ -238,7 +238,7 @@ public:void testPool() {
 		tp->execute(&demo);
 	}
 
-	std::this_thread::sleep_for(std::chrono::seconds(2));
+	std::this_thread::sleep_for(std::chrono::seconds(8));
 	delete tp;
 	tp = nullptr;
 	printf("ALL\n");
