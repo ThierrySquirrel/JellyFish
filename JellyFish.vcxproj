@@ -121,7 +121,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <WarningLevel>Level4</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
@@ -156,6 +156,7 @@
     <ClInclude Include="ThreadPool.h" />
     <ClInclude Include="ThreadPoolConstant.h" />
     <ClInclude Include="ThreadRunAgent.h" />
+    <ClInclude Include="ThreadRunAgentConstant.h" />
     <ClInclude Include="ThreadRunScheduledAgent.h" />
     <ClInclude Include="ThreadScheduledOne.h" />
     <ClInclude Include="VirtualThreadRun.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="ThreadPool.cpp" />
     <ClCompile Include="ThreadPoolConstant.cpp" />
     <ClCompile Include="ThreadRunAgent.cpp" />
+    <ClCompile Include="ThreadRunAgentConstant.cpp" />
     <ClCompile Include="ThreadRunScheduledAgent.cpp" />
     <ClCompile Include="ThreadScheduledOne.cpp" />
     <ClCompile Include="VirtualThreadRun.cpp" />

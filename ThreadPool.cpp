@@ -55,7 +55,7 @@ void JellyFish::ThreadPool::init(int& maxThreadSize) {
 	JellyFish::ThreadPool::setMaxThreadSize(maxThreadSize);
 	isDeleteAll.store(false);
 	threadSleepSize.store(maxThreadSize);
-
+	threadAllStopSize.store(maxThreadSize);
 
 	JellyFish::ConcurrencyDeque<JellyFish::VirtualThreadRun*> thisDeque(maxThreadSize);
 	containerAll = thisDeque;
@@ -67,7 +67,9 @@ void JellyFish::ThreadPool::init(int& maxThreadSize) {
 			&isDeleteAll,
 			&threadSleepSize,
 			&threadAllStart,
-			&threadAllStartMutex);
+			&threadAllStartMutex,
+			&threadAllStopSize,
+			&threadAllStop);
 		std::thread(std::bind(&JellyFish::ThreadRunAgent::agentRun, runAgent)).detach();
 	}
 
@@ -80,6 +82,10 @@ void JellyFish::ThreadPool::deleteAll() {
 	isDeleteAll.store(true);
 	containerCondition.notify_all();
 
+	int milliseconds = JellyFish::ThreadPoolConstant::DEFAULT_MILLISECONDS;
+	int maxTryCount = JellyFish::ThreadPoolConstant::DEFAULT_MAX_TRY_COUNT;
+	threadAllStop.tryOneGet(milliseconds, maxTryCount);
+	
 	bool deleteAll = false;
 	while (!deleteAll) {
 		JellyFish::BaseContainer<JellyFish::VirtualThreadRun*> thisContainer = containerAll.tryPopBack();

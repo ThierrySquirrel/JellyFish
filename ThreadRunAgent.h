@@ -21,6 +21,7 @@
 #include "VirtualThreadRun.h"
 #include "ConcurrencyDeque.h"
 #include "CompletableFuture.h"
+#include "ThreadRunAgentConstant.h"
 
 #define DllExport __declspec(dllexport)
 
@@ -43,6 +44,9 @@ namespace JellyFish {
 	private:JellyFish::CompletableFuture<bool>* threadAllStart;
 	private:std::mutex* threadAllStartMutex;
 
+	private:std::atomic<int>* threadAllStopSize;
+	private:JellyFish::CompletableFuture<bool>* threadAllStop;
+
 	public:ThreadRunAgent();
 	public:ThreadRunAgent(JellyFish::ConcurrencyDeque<JellyFish::VirtualThreadRun*>* containerAll,
 		std::mutex* containerMutex,
@@ -50,10 +54,16 @@ namespace JellyFish {
 		std::atomic<bool>* isDeleteAll,
 		std::atomic<int>* threadSleepSize,
 		JellyFish::CompletableFuture<bool>* threadAllStart,
-		std::mutex* threadAllStartMutex);
+		std::mutex* threadAllStartMutex,
+		std::atomic<int>* threadAllStopSize,
+		JellyFish::CompletableFuture<bool>* threadAllStop);
 	public:void agentRun();
 	
 	private:void lockAwait();
+	private:void threadAllStoplockAwait();
+	
 	private:void call();
+
+	private:void threadAllStopCall();
 	};
 }

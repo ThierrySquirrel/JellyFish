@@ -190,6 +190,12 @@
     <Filter Include="源文件\test">
       <UniqueIdentifier>{ede28d7b-f49a-4652-a5db-972e52739ef2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\src\thread\run\agent\constant">
+      <UniqueIdentifier>{e9cb2782-1389-4a20-b9c8-5c01710272d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\src\thread\run\agent\constant">
+      <UniqueIdentifier>{4f5c2069-e857-47d3-99cf-907880519450}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -252,6 +258,9 @@
     <ClInclude Include="resource.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="ThreadRunAgentConstant.h">
+      <Filter>头文件\src\thread\run\agent\constant</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -310,6 +319,9 @@
     </ClCompile>
     <ClCompile Include="ThreadRunScheduledAgent.cpp">
       <Filter>源文件\src\thread\run\scheduled\agent</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadRunAgentConstant.cpp">
+      <Filter>源文件\src\thread\run\agent\constant</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -43,6 +43,9 @@ namespace JellyFish {
 	private:JellyFish::CompletableFuture<bool> threadAllStart;
 	private:std::mutex threadAllStartMutex;
 
+	private:std::atomic<int> threadAllStopSize;
+	private:JellyFish::CompletableFuture<bool> threadAllStop;
+
 	public:ThreadPool();
 	public:ThreadPool(int& maxThreadSize);
 	public:~ThreadPool();

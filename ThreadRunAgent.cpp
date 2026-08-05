@@ -32,7 +32,9 @@ JellyFish::ThreadRunAgent::ThreadRunAgent(JellyFish::ConcurrencyDeque<JellyFish:
 	std::atomic<bool>* isDeleteAll,
 	std::atomic<int>* threadSleepSize,
 	JellyFish::CompletableFuture<bool>* threadAllStart,
-	std::mutex* threadAllStartMutex) {
+	std::mutex* threadAllStartMutex,
+	std::atomic<int>* threadAllStopSize,
+	JellyFish::CompletableFuture<bool>* threadAllStop) {
 	this->containerAll = containerAll;
 	this->containerMutex = containerMutex;
 	this->containerCondition = containerCondition;
@@ -40,16 +42,22 @@ JellyFish::ThreadRunAgent::ThreadRunAgent(JellyFish::ConcurrencyDeque<JellyFish:
 	this->threadSleepSize = threadSleepSize;
 	this->threadAllStart = threadAllStart;
 	this->threadAllStartMutex = threadAllStartMutex;
+	this->threadAllStopSize = threadAllStopSize;
+	this->threadAllStop = threadAllStop;
 }
 void JellyFish::ThreadRunAgent::agentRun() {
 	lockAwait();
+
 	bool deleteAll = isDeleteAll->load();
 	while (!deleteAll) {
 		JellyFish::BaseContainer<JellyFish::VirtualThreadRun*> threadRun = containerAll->tryPopBack();
 		bool empty = threadRun.getIsEmpty();
 		if (empty) {
 			std::unique_lock<std::mutex> containerLock(*containerMutex);
-			containerCondition->wait(containerLock);
+			
+			int waitForMilliseconds= ThreadRunAgentConstant::DEFAULT_WAIT_FOR_MILLISECONDS;
+			containerCondition->wait_for(containerLock, std::chrono::milliseconds(waitForMilliseconds));
+
 			deleteAll = isDeleteAll->load();
 			continue;
 		}
@@ -62,20 +70,35 @@ void JellyFish::ThreadRunAgent::agentRun() {
 
 		deleteAll = isDeleteAll->load();
 	}
+	threadAllStoplockAwait();
 }
 
 void JellyFish::ThreadRunAgent::lockAwait() {
 	threadAllStartMutex->lock();
 	call();
 	threadAllStartMutex->unlock();
-	std::unique_lock<std::mutex> containerLock(*containerMutex);
-	containerCondition->wait(containerLock);
 }
+
+void JellyFish::ThreadRunAgent::threadAllStoplockAwait() {
+	threadAllStartMutex->lock();
+	threadAllStopCall();
+	threadAllStartMutex->unlock();
+}
+
 void JellyFish::ThreadRunAgent::call() {
 	threadSleepSize->fetch_sub(1);
 	int thisSize=threadSleepSize->load();
 	if (thisSize <= 0) {
 		bool allStart = true;
 		threadAllStart->tryOneComplete(allStart);
+	}
+}
+
+void JellyFish::ThreadRunAgent::threadAllStopCall() {
+	threadAllStopSize->fetch_sub(1);
+	int thisSize = threadAllStopSize->load();
+	if (thisSize <= 0) {
+		bool allStop = true;
+		threadAllStop->tryOneComplete(allStop);
 	}
 }
